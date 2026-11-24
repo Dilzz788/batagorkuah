@@ -1,0 +1,436 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Love ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@1,500;1,600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #e96b91;
+    --dark: #784052;
+    --soft: #fff0f4;
+}
+
+body {
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    background:
+      radial-gradient(circle at top left,#ffe2eb,transparent 50%),
+      linear-gradient(135deg,#fff5f7,#ffdce6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    color: var(--dark);
+}
+
+.particles {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    bottom: -30px;
+    animation: floatUp linear forwards;
+    opacity: .7;
+}
+
+@keyframes floatUp {
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.container {
+    width: 100%;
+    max-width: 410px;
+    position: relative;
+    z-index: 2;
+}
+
+.page {
+    display: none;
+    background: rgba(255,255,255,.82);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,.9);
+    border-radius: 28px;
+    padding: 35px 25px;
+    box-shadow: 0 15px 50px rgba(192,95,126,.13);
+    text-align: center;
+    animation: appear .7s ease;
+}
+
+.page.active {
+    display: block;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.heart-logo {
+    font-size: 65px;
+    animation: beat 1.5s infinite;
+}
+
+@keyframes beat {
+    50% { transform: scale(1.12); }
+}
+
+h1 {
+    color: var(--pink);
+    font-size: 27px;
+    margin: 15px 0;
+}
+
+h2 {
+    color: var(--pink);
+    font-size: 22px;
+}
+
+p {
+    font-size: 13px;
+    line-height: 2;
+    color: #8c6271;
+    margin: 15px 0;
+}
+
+.subtitle {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #c58a9e;
+    text-transform: uppercase;
+}
+
+.btn {
+    display: inline-block;
+    border: none;
+    background: linear-gradient(135deg,#f28bab,#df6288);
+    color: white;
+    padding: 13px 27px;
+    border-radius: 50px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    box-shadow: 0 7px 20px #e96b9140;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px #e96b9155;
+}
+
+.btn:active {
+    transform: scale(.96);
+}
+
+.love-title {
+    font-family: 'Playfair Display',serif;
+    font-size: 27px;
+    color: #d65d82;
+    font-style: italic;
+}
+
+.divider {
+    width: 55px;
+    height: 2px;
+    background: #f3b2c5;
+    margin: 23px auto;
+}
+
+.signature {
+    margin-top: 25px;
+    font-family: 'Playfair Display',serif;
+    font-style: italic;
+    color: #d65d82;
+    font-size: 17px;
+}
+
+.reply-trigger {
+    margin-top: 35px;
+    padding-top: 22px;
+    border-top: 1px solid #f8dce5;
+}
+
+.reply-trigger p {
+    font-size: 12px;
+    margin: 5px;
+}
+
+.reply-trigger .btn {
+    margin-top: 10px;
+}
+
+.back {
+    display: block;
+    margin: 20px auto 0;
+    color: #c47d94;
+    background: none;
+    border: none;
+    font-family: inherit;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+textarea {
+    width: 100%;
+    background: #fff8fa;
+    border: 1px solid #f2d2dd;
+    border-radius: 13px;
+    padding: 14px;
+    margin-top: 12px;
+    font-family: inherit;
+    font-size: 13px;
+    color: var(--dark);
+    outline: none;
+    resize: vertical;
+    min-height: 140px;
+}
+
+textarea:focus {
+    border-color: var(--pink);
+    box-shadow: 0 0 0 3px #f9dce6;
+}
+
+footer {
+    text-align: center;
+    font-size: 10px;
+    color: #bd8799;
+    margin-top: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="particles" id="particles"></div>
+
+<div class="container">
+
+    <!-- HALAMAN PERTAMA -->
+
+    <section class="page active" id="home">
+
+        <div class="heart-logo">💗</div>
+
+        <div class="subtitle">A little surprise for you</div>
+
+        <h1>Hai, Bebiii</h1>
+
+        <p>
+            Eitsss, jangan di-close dulu! 😤
+            <br>
+            Ada sesuatu yang spesial buat kamu.
+        </p>
+
+        <p>
+            Aku punya sedikit kejutan.
+            Mau lihat nggak? 🥺
+        </p>
+
+        <button class="btn" onclick="showPage('message')">
+            Buka Pesan ❤️
+        </button>
+
+    </section>
+
+
+    <!-- HALAMAN KEDUA: UCAPAN -->
+
+    <section class="page" id="message">
+
+        <div class="subtitle">Something from my heart</div>
+
+        <h1>Buat Kamu ❤️</h1>
+
+        <div class="divider"></div>
+
+        <div class="love-title">
+            My Flowers in my heart.
+        </div>
+
+        <p>
+            Aku mungkin nggak selalu bisa memberikan
+            hal yang sempurna buat kamu.
+            Tapi aku selalu ingin memberikan sesuatu
+            yang punya arti buat kamu.
+        </p>
+
+        <p>
+            Yaa mungkin kalung ini sederhana, tapi aku ngasih kalung ini tuh bener bener
+            tulus niat dalam hati aku, awalnya kalung ini tuh mau aku kasih pas malam tahun baru
+            jadi yaa kalung ini tuh hadiah tahun baru dari aku, tapi kan faktanya... , aku udah nyiapin kalung
+            ini dari jauh jauh hari sebelum aku pernah bilang ke kamu "Aku mau buatin kamu baju" kalung ini udah ada 
+            kalung ini aku simpen dan aku nunggu buat ngasih ini pas malam tahun baru itu tiba, tapi kan... Yaa aku harap kamu suka dan kamu pake sama kalung yang aku kasih ini ,mungkin ini cuma hadiah kecil tapi asal kamu tau itu bener bener
+            niat tulus hati aku buat ngasih kalung ini buat kamu, kamu jangan khawatir aku pergi aku masih stay di sini yang selalu mencintai kamu setulus hati aku,
+            aku harap kita dipisahkan itu buat sama sama berproses dan saling berkembang ,semoga kita di pertemukan lagi di Versi terbaik kitaa.
+        </p>
+
+        <p>
+            Makasii udah nerima hadiah ini.
+            Aku masih di sini yang selalu mencintaimu.
+        </p>
+
+        <div class="divider"></div>
+
+        <h2>I love you, Bebiii. 💗</h2>
+
+        <div class="signature">
+            Form Idull ,Idill ,Candill ,Bibee ,Bedull ,Bedill ,Abangg.
+        </div>
+
+        <!-- TOMBOL MENUJU FORM -->
+
+        <div class="reply-trigger">
+
+            <h2 style="font-size:17px">
+                Ada yang ingin kamu sampaikan?
+            </h2>
+
+            <button class="btn"
+                onclick="showPage('reply')">
+                Tulis pesan untukku 💌
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- HALAMAN KETIGA: BALASAN -->
+
+    <section class="page" id="reply">
+
+        <div class="heart-logo">💌</div>
+
+        <h1>Pesan Untuk Aku</h1>
+
+        <p>
+            Aku sudah menyampaikan isi hatiku.
+            Sekarang aku mau dengar isi hatimu juga.
+            Jangan malu-malu yaa! 🥹
+        </p>
+
+        <!-- GANTI YOUR_FORM_ID DENGAN ID FORMSPREE -->
+
+        <form
+            action="https://formspree.io/f/YOUR_FORM_ID"
+            method="POST">
+
+            <textarea
+                name="Pesan Balasan"
+                placeholder="Tulis sesuatu buat aku di sini... ❤️"
+                required></textarea>
+
+            <input
+                type="hidden"
+                name="_subject"
+                value="Ada pesan cinta baru! ❤️">
+
+            <button type="submit" class="btn">
+                Kirim Pesanku 💗
+            </button>
+
+        </form>
+
+        <button class="back"
+            onclick="showPage('message')">
+            ← Kembali ke surat
+        </button>
+
+    </section>
+
+    <footer>
+        Made with love, especially for you ♡
+    </footer>
+
+</div>
+
+<script>
+
+// PINDAH HALAMAN
+
+function showPage(id) {
+
+    document.querySelectorAll('.page').forEach(page => {
+        page.classList.remove('active');
+    });
+
+    document.getElementById(id).classList.add('active');
+
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+
+    if (id === 'message') {
+        burstHearts();
+    }
+}
+
+// ANIMASI HATI
+
+function createHeart() {
+
+    const heart = document.createElement('div');
+
+    heart.className = 'heart';
+
+    const emojis = ['❤️','💕','💗','💖','🌸'];
+
+    heart.innerHTML =
+        emojis[Math.floor(Math.random() * emojis.length)];
+
+    heart.style.left = Math.random() * 100 + 'vw';
+
+    heart.style.fontSize =
+        (13 + Math.random() * 15) + 'px';
+
+    heart.style.animationDuration =
+        (5 + Math.random() * 5) + 's';
+
+    document.getElementById('particles')
+        .appendChild(heart);
+
+    setTimeout(() => heart.remove(), 10000);
+}
+
+function burstHearts() {
+
+    for (let i = 0; i < 25; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+}
+
+setInterval(createHeart, 1000);
+
+</script>
+
+</body>
+</html>
